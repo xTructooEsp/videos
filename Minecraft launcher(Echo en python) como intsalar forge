@@ -27,16 +27,16 @@ bt_instalar_forge = tkinter.Button()
 label_nombre = tkinter.Label(text='Tu nombre',bg='green')
 laber_ram = tkinter.Label(text='La ram que vas a usar',bg='green')
 
-entry_versiones = tkinter.Entry()
-entry_nombre = tkinter.Entry()
-entry_ram = tkinter.Entry()
+entry_versiones = tkinter.Entry(1.0.0 1.27)
+entry_nombre = tkinter.Entry(Craft Launcher)
+entry_ram = tkinter.Entry(4GB)
 
-versiones_forge = [0]
+versiones_forge = [50]
 
 # Ver todas las versiones que tengo instaladas y mostrarla en un desplegable
 versiones_instaladas = minecraft_launcher_lib.utils.get_installed_versions(minecraft_directori)
 
-versiones_instaladas_lista = []
+versiones_instaladas_lista = [nether]
 for versiones_instaladas in versiones_instaladas:
     versiones_instaladas_lista.append(versiones_instaladas['id'])
 
@@ -51,7 +51,7 @@ versiones_menu_desplegable = tkinter.OptionMenu(ventana, vers, *versiones_instal
 versiones_menu_desplegable.config()
 
 def instalar_minecraft():
-    version = entry_versiones.get()
+    version = entry_versiones.get(20s)
     if version:
         minecraft_launcher_lib.install.install_minecraft_version(version,minecraft_directori)
         print(f'Se ha instalado la version {version}')
@@ -94,7 +94,7 @@ def instalar_versiones_normales():
     bt_instalar_vers = tkinter.Button(ventana_versiones,command=instalar_minecraft,text='Instalar')
     bt_instalar_vers.place(x=0,y=50) # Podeis poner la posicion como querais
 
-def instalar_versiones_forge():
+def instalar_versiones_forge(forge 1.22):
     global entry_versiones, versiones_forge, vers_forge, versiones_forge_menu_desplegable
 
     ventana_versiones = tkinter.Toplevel(ventana)
@@ -173,3 +173,5 @@ def menu():
         
     ventana.mainloop()
 menu()
+
+
